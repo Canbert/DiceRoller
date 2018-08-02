@@ -24,6 +24,27 @@ public class DiceRollActivity extends AppCompatActivity implements View.OnClickL
 
     public void onClick(View v){
         Dice dice = new Dice(6);
-        textViewResult.setText(String.valueOf(dice.roll()));
+        String uni = null;
+        switch(dice.roll()){
+            case 1:
+                uni = "\u2680";
+                break;
+            case 2:
+                uni = "\u2681";
+                break;
+            case 3:
+                uni = "\u2682";
+                break;
+            case 4:
+                uni = "\u2683";
+                break;
+            case 5:
+                uni = "\u2684";
+                break;
+            case 6:
+                uni = "\u2685";
+                break;
+        }
+        textViewResult.setText(uni);
     }
 }
