@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class DiceRollActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button buttonRoll;
-    private TextView textViewResult;
+    private TextView textViewResult, textViewTotal;
     private SeekBar seekBarAmount;
 
     @Override
@@ -22,22 +22,26 @@ public class DiceRollActivity extends AppCompatActivity implements View.OnClickL
         buttonRoll.setOnClickListener(this);
 
         textViewResult = (TextView)this.findViewById(R.id.textViewResult);
-
         seekBarAmount = (SeekBar)this.findViewById(R.id.seekBarAmount);
+        textViewTotal = (TextView)this.findViewById(R.id.textViewTotal);
     }
 
     public void onClick(View v){
         Dice dice = new Dice(6);
         String str = "";
+        int total = 0;
         for(int i = 0; i <= seekBarAmount.getProgress(); i++){
-            str += roll(dice);
+            int num = dice.roll();
+            str += roll(num);
+            total += num;
         }
         textViewResult.setText(str);
+        textViewTotal.setText(getResources().getString(R.string.dice_total) + " " + String.valueOf(total));
     }
 
-    private String roll(Dice dice){
+    private String roll(int num){
         String uni = null;
-        switch(dice.roll()){
+        switch(num){
             case 1:
                 uni = "\u2680";
                 break;
