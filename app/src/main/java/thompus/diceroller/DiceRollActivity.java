@@ -7,10 +7,10 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class DiceRollActivity extends AppCompatActivity implements View.OnClickListener{
+public class DiceRollActivity extends AppCompatActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener{
 
     private Button buttonRoll;
-    private TextView textViewResult, textViewTotal;
+    private TextView textViewResult, textViewTotal, textViewAmount;
     private SeekBar seekBarAmount;
 
     @Override
@@ -23,7 +23,14 @@ public class DiceRollActivity extends AppCompatActivity implements View.OnClickL
 
         textViewResult = (TextView)this.findViewById(R.id.textViewResult);
         seekBarAmount = (SeekBar)this.findViewById(R.id.seekBarAmount);
+        seekBarAmount.setOnSeekBarChangeListener(this);
+
         textViewTotal = (TextView)this.findViewById(R.id.textViewTotal);
+        textViewAmount = (TextView)this.findViewById(R.id.textViewAmount);
+
+        //Update the text so that they have numbers values
+        textViewTotal.setText(getResources().getString(R.string.dice_total) + " " + String.valueOf(0));
+        textViewAmount.setText(getResources().getString(R.string.dice_amount) + " " + String.valueOf(seekBarAmount.getProgress() + 1));
     }
 
     public void onClick(View v){
@@ -62,5 +69,20 @@ public class DiceRollActivity extends AppCompatActivity implements View.OnClickL
                 break;
         }
         return uni;
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+        textViewAmount.setText(getResources().getString(R.string.dice_amount) + " " + String.valueOf(seekBar.getProgress() + 1));
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
     }
 }
