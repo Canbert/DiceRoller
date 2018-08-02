@@ -15,6 +15,13 @@
         android:textSize="90sp" />
 
     <TextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/dice_total" />
+
+    <TextView
         android:id="@+id/textViewAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
