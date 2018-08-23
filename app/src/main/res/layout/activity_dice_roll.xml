@@ -37,10 +37,4 @@
         android:max="9"
         android:progress="0" />
 
-    <Button
-        android:id="@+id/buttonRoll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/roll_dice" />
-
 </LinearLayout>
