@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/dice_amount" />
+        android:text="@string/dice_amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <SeekBar
         android:id="@+id/seekBarAmount"
@@ -27,7 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/dice_total" />
+        android:text="@string/dice_total"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/textViewResult"
@@ -35,6 +37,7 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="90sp" />
 
 </LinearLayout>
