@@ -8,7 +8,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class DiceRollActivity extends AppCompatActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener{
-    
+
     private TextView textViewResult, textViewTotal, textViewAmount;
     private SeekBar seekBarAmount;
 
@@ -18,6 +18,8 @@ public class DiceRollActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_dice_roll);
 
         textViewResult = (TextView)this.findViewById(R.id.textViewResult);
+        textViewResult.setOnClickListener(this);
+
         seekBarAmount = (SeekBar)this.findViewById(R.id.seekBarAmount);
         seekBarAmount.setOnSeekBarChangeListener(this);
 
