@@ -19,6 +19,7 @@ public class DiceRollActivity extends AppCompatActivity implements View.OnClickL
 
         textViewResult = (TextView)this.findViewById(R.id.textViewResult);
         textViewResult.setOnClickListener(this);
+        textViewResult.setText("Tap here to roll dice");
 
         seekBarAmount = (SeekBar)this.findViewById(R.id.seekBarAmount);
         seekBarAmount.setOnSeekBarChangeListener(this);
